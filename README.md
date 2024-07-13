@@ -1,8 +1,16 @@
-VBC Brawl V29 (maksimka hitler)
+VBC Brawl V29 (mt brawl fork)
 
-ANDROID APK - YOUR USING
+what has improved w this fork?
+well not alot but
 
-Server ZIP: https://codeload.github.com/LekmaDev/BS-V29/zip/refs/heads/main
+- adjust brawler chances
+- random maps
+- cleaning up code
+- translating stuff
+
+ANDROID APK - https://mega.nz/file/1wJzUQQS#kHIUkYZI-z0tW_O4pnFz0FS8tWMXmVPB4tJuOyf2Sz0 if this one doesn't work use the mt apk: [here](https://mega.nz/file/8h5xTYBA#U_Or0t5q8Tg99OFIMWJAMKyP3Q81rIq9S8h1mlXW9CY)
+
+Server ZIP: [here](https://github.com/Erder00/VBC-Brawl-V29/archive/refs/heads/main.zip)
 
 ## Requirements: ##
 1. a brain...
