@@ -7,6 +7,8 @@ well not alot but
 - random maps
 - cleaning up code
 - translating stuff
+- fix not being able to collect the first trophy road box
+- fix maxing out a brawler renders the acc unusable
 
 ANDROID APK - https://mega.nz/file/1wJzUQQS#kHIUkYZI-z0tW_O4pnFz0FS8tWMXmVPB4tJuOyf2Sz0 (the client was made by primodev, all credits to him)
 if this one doesn't work use the mt apk: [here](https://mega.nz/file/8h5xTYBA#U_Or0t5q8Tg99OFIMWJAMKyP3Q81rIq9S8h1mlXW9CY)
