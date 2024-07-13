@@ -1,5 +1,5 @@
 {
-    "Gems": 0,
+    "Gems": 1,
     "Gold": 0,
     "Tickets": 0,
     "Starpoints": 0,
@@ -7,100 +7,34 @@
     "BigBoxTokens": 0,
     "ExperiencePoints": 0,
     "Trophies": 0,
-    "ShowPacketsInLog": false,
+    "ShowPacketsInLog": true,
     "ThemeID": 0,
-    "SupportedContentCreator": "",
+    "SupportedContentCreator": "on",
     "Maintenance": false,
     "Patch": false,
     "vips": [
-        9,
-        17,
-        25,
-        32,
-        97,
-        145,
-        114,
-        173,
-        232,
-        294
+        1,
+        2
     ],
     "CCC": [
-        "Eqwaak",
-        "WAR",
-        "BreakFixes"
+        "erder",
+        "erder-2"
     ],
     "banID": [],
     "buybp": [
-        9,
-        26,
-        53,
-        25,
-        32,
-        98,
-        109,
-        112,
-        113,
-        122,
-        123,
-        131,
-        101,
-        143,
-        148,
-        186,
-        27,
-        203,
-        220,
-        229,
-        177,
-        110,
-        57,
-        266,
-        271,
-        232,
-        310,
-        292,
-        320,
-        325,
-        327,
-        324,
-        330,
-        332,
-        336,
-        338,
-        343,
-        345,
-        346,
-        351,
-        116,
-        352,
-        363,
-        370,
-        372,
-        358,
-        89,
-        426,
-        403,
-        427,
-        178,
-        35,
-        451,
-        455
+        1,
+        2
     ],
     "ClubBlock": [
         "GigHO"
     ],
     "DelName": [
-        "@Brawl_DDoS",
-        "nocrypto..?",
-        "VBC26",
-        "t.me/Brawl_DDoS",
-        "ArR8"
+        "erthrtehfgh",
+        "rethrth"
     ],
     "PatchUrl": "http://192.168.0.103:8080",
-    "UpdateUrl": "https://t.me/dssstudios",
-    "block": [
-        "1.2.3.4"
-    ],
+    "UpdateUrl": "https://pornhub.com",
+    "block": [],
     "Skins": [
         29,
         122,
@@ -186,7 +120,7 @@
         1769411936
     ],
     "VIPTG": [
-        1098586062,
-        1156896214
+        0,
+        1
     ]
 }

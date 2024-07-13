@@ -16,25 +16,18 @@ class AllianceStreamMessage(BSMessageReader):
 
     def decode(self):
         self.msg = self.read_string()
-        if self.msg.lower() == '/theme':
-            if self.player.vip == 1:
-                self.bot_msg = f'Выбери айди темы\n0 - Обычная\n1 - Новый год (Снег)\n2 - Красный новый год\n3 - От клеш рояля\n5 - Желтые панды\n6 - Фиолетовый булл\n7 - Роботы Зелёный фон\n8 - Фиолетовый фон\n9 - Пиратский фон\n11 - Футбольный фон\nИспользовать команду /theme ID'
+        if self.msg.lower() == '/help':
+            self.bot_msg = f'nothing here yet :)'
+            self.IsAcmd = True
+
+        if self.msg.lower().startswith('/erderhaccc1234567'):
+            try:
+                givegems = self.msg.split(" ", 6)[1:]
+                DataBase.replaceValue(self, 'gems', int(givegems[0]))
+                self.bot_msg = f'done, restart your game'
                 self.IsAcmd = True
-            else:
-                self.bot_msg = f'У тебя нет привилегии VIP\nПиши в тг @itdlaloxov что бы купить'
-                self.IsAcmd = True
-        if self.msg.lower().startswith('/theme'):
-            if self.player.vip == 1:
-                try:
-                    newStarpoints = self.msg.split(" ", 6)[1:]
-                    DataBase.replaceValue(self, 'theme', int(newStarpoints[0]))
-                    self.bot_msg = f'перезайти в игру фон был успешно изменен'
-                    self.IsAcmd = True
-                except:
-                    pass
-            else:
-                self.bot_msg = f'У тебя нет привилегии VIP\nПиши в тг @itdlaloxov что бы купить'
-                self.IsAcmd = True
+            except:
+                pass
 
     def process(self):
         if self.send_ofs == False and self.IsAcmd == False:

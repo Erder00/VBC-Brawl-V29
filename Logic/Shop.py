@@ -104,9 +104,6 @@ class Shop:
     def UpdateOfferData(self, i):
         with open("Logic/offers.json", "r",encoding='utf-8') as f:
             data = json.load(f)
-        data[str(i)]["WhoBuyed"].append(int(self.player.low_id))
-        with open("Logic/offers.json", "w",encoding='utf-8') as f:
-            json.dump(data, f, indent=4, ensure_ascii=False)
     def RemoveOffer(self, i):
         with open("Logic/offers.json", "r") as f:
             data = json.load(f, indent=4,)

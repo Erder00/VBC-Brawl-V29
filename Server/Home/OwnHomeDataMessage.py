@@ -300,7 +300,7 @@ class OwnHomeDataMessage(Writer):
         self.writeInt(1) # Notification Index
         self.writeBoolean(False) # Notification Read
         self.writeInt(0) # Notification Time Ago
-        self.writeString(f"Добро пожаловать в <c8bfd28>V<c68fb51>B<c45f97a>C<c22f7a3> <c09f5cc>B<c00f5cc>R<c19f7a3>A<c33f97a>W<c4cfb51>L</c>!\nТвой ID: <c57fa66>{self.player.low_id}</c>\nКупить привилегию VIP TG - <c05f971>@<c0af481>i<c0fef91>t<c14eaa0>d<c19e5b0>l<c1edfbf>a<c1fe0c0>l<c19e5a0>o<c14ea80>x<c0fef60>o<c0af440>v</c>\nНовостной <c82fc33>T<c57fa66>e<c2bf799>l<c00f5cc>e<c20f799>g<c40fa66>r<c60fc33>a<c80ff00>m</c> канал: t.me/vbcbrawl\n") # Notification Message Entry       
+        self.writeString(f"you're running: <cf50109>M<cec0313>T<ce3051c> <cd90726>B<cd0092f>r<cc70b39>a<cbe0d42>w<cbe0e43>l<cc41c49> <cca2a50>v<cd03857>1<cd6475d>.<cdc5564>0</c>! your ID: <c57fa66>{self.player.low_id}</c>\nreport bugs at - <ce34ed8>d<ce357da>s<ce360dc>c<ce36add>.<ce373e0>g<ce37ce2>g<ce386e4>/<ccc73d7>m<cb660ca>t<ca04dbe>b<c893bb1>r<c7328a5>a<c5d1598>w<c47038c>l</c>\ndiscord: https://dsc.gg/mtbrawl\n") # Notification Message Entry       
         self.writeVint(0)
         self.writeVint(0)
         self.writeBoolean(True)
@@ -318,8 +318,8 @@ class OwnHomeDataMessage(Writer):
         self.writeVint(self.player.high_id)  # High Id
         self.writeVint(self.player.low_id)  # Low Id
 
-        if self.player.name == "VBC26":
-            self.writeString("VBC26")  # Player Name
+        if self.player.name == "Mt Brawl":
+            self.writeString("MT Brawl")  # Player Name
             self.writeVint(0)
         else:
             self.writeString(f"{self.player.name}")  # Player Name
@@ -400,7 +400,7 @@ class OwnHomeDataMessage(Writer):
         self.writeVint(1585502369)
         if self.player.low_id == 1:
             self.player.err_code = 1
-            LoginFailedMessage(self.client, self.player, "Аккаунт не найден удалите все данные о игре!").send()
+            LoginFailedMessage(self.client, self.player, "account not found, clear your app data to fix this issue!").send()
         elif self.player.low_id > 1:
             DataBase.replaceValue(self, "online", 2)
             if self.player.gold < 0:
@@ -412,6 +412,6 @@ class OwnHomeDataMessage(Writer):
             if self.player.low_id in settings['vips']:
                 DataBase.replaceValue(self, 'vip', 1)
             if self.player.low_id in settings['banID']:
-                update_url = 'https://t.me/vbcsupport_bot'
+                update_url = 'https://dsc.gg/mtbrawl'
                 self.player.err_code = 11
-                LoginFailedMessage(self.client, self.player, "Вы были заблокированы! Подать на аппеляцию можно написав боту - @vbcsupport_bot").send()
+                LoginFailedMessage(self.client, self.player, "you've been banned, fuck off").send()

@@ -44,7 +44,7 @@ class LoginMessage(BSMessageReader):
                 AllianceStreamMessage(self.client, self.player, 0, 0).send()
         elif self.player.low_id == 1:
             self.player.err_code = 1
-            LoginFailedMessage(self.client, self.player, "Аккаунт не найден удалите все данные о игре!").send()
+            LoginFailedMessage(self.client, self.player, "account not found, clear your appdata to fix this!").send()
         elif self.player.low_id == 0:
             if os.path.exists("database/Player/plr.db"):
                 self.conn = sql.connect("database/Player/plr.db")

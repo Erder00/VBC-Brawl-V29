@@ -18,7 +18,7 @@ class BattleEnd2(Writer):
         self.writeVint(tokenGained) # Tokens Gained
         if tropGainded >= 0:
             if self.player.vip == 1:
-                tropGainded += 8
+                tropGainded += 50
                 self.writeVint(tropGainded) # Trophies Result
             else:
                 self.writeVint(tropGainded) # Trophies Result
@@ -42,7 +42,7 @@ class BattleEnd2(Writer):
         self.writeVint(0) # Coin Shower Event
         if tropGainded > 0:
             if self.player.vip == 1:
-                self.writeVint(8) # Underdog Trophies
+                self.writeVint(50) # Underdog Trophies
             else:
                 self.writeVint(0) # Underdog Trophies
         else:
@@ -75,7 +75,7 @@ class BattleEnd2(Writer):
         self.writeVint(0) # Unknown (Power Play Related)
         self.writeVint(1) # Brawler Power Level
         self.writeBoolean(False) # HighID and LowID Array
-        self.writeString("bot") # Bot 1 Name
+        self.writeString("MT bot") # Bot 1 Name
         self.writeVint(0) # Player Experience Level
         self.writeVint(28000000) # Player Profile Icon
         self.writeVint(43000000) # Player Name Color

@@ -1,12 +1,12 @@
 import time
-import random
+
 class EventSlots:
     Timer = 86399
 
     maps = [
         # Status = [3 = Nothing, 2 = Star Token, 1 = New Event]
         {
-            'ID': random.choice([7,8,9,10,11,12,40,113,114,115,116,117,122,212]),
+            'ID': 7,
             'Status': 2,
             'Ended': False,
             'Modifier': 0,
@@ -14,14 +14,15 @@ class EventSlots:
         },
 
         {
-            'ID': random.choice([14,32,33]),
+            'ID': 32,
             'Status': 2,
             'Ended': False,
             'Modifier': 2,
             'Tokens': 10
         },
+
         {
-            'ID': random.choice([4,54,82,218,219]),
+            'ID': 17,
             'Status': 2,
             'Ended': False,
             'Modifier': 0,
@@ -29,10 +30,136 @@ class EventSlots:
         },
 
         {
-            'ID': random.choice([53,137,146,216,217]),
+            'ID': 0,
             'Status': 2,
             'Ended': False,
-            'Modifier': 2,
+            'Modifier': 0,
             'Tokens': 10
-        }
+        },
+
+        {
+            'ID': 38,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+
+        {
+            'ID': 24,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+
+        {
+            'ID': 21,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 2
+        },
+
+        {
+            'ID': 97,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        
+        {
+            'ID': 25,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        {
+            'ID': 56,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        {
+            'ID': 23,
+            'Status': 2,
+            'Ended': False,
+            'Modifier': 0,
+            'Tokens': 10
+        },
+        
+
     ]
+
+
+
+
+

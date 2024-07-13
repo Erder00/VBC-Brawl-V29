@@ -22,7 +22,7 @@ class LogicSetPlayerNameColorCommand(BSMessageReader):
         if self.name_color in vip:
             if self.player.vip == 0:
                 self.player.err_code = 1
-                LoginFailedMessage(self.client, self.player, f"У вас нет вип статуса. Ваш ID: {self.player.low_id} Купить вип можно в тг:@itdlaloxov").send()
+                LoginFailedMessage(self.client, self.player, f"the player {self.player.low_id} does not boost the MT Brawl discord server, to unlock this feature boost the server and contact @kidnappeur").send()
             else:
                 DataBase.replaceValue(self, 'name_color', self.name_color)
         else:

@@ -19,48 +19,48 @@ class BattleResult2Message(Writer):
         tokenGained = 0
         tropGainded = 0
         if 0 <= brawler_trophies <= 49:
-            win_val = 12
+            win_val = 1000
             lose_val = 0
         else:
             if 50 <= brawler_trophies <= 99:
-                win_val = 18
-                lose_val = -1
+                win_val = 1000
+                lose_val = -100
             if 100 <= brawler_trophies <= 199:
-                win_val = 16
-                lose_val = -2
+                win_val = 1600
+                lose_val = -200
             if 200 <= brawler_trophies <= 299:
-                win_val = 14
-                lose_val = -3
+                win_val = 1400
+                lose_val = -300
             if 300 <= brawler_trophies <= 399:
-                win_val = 12
-                lose_val = -4
+                win_val = 1200
+                lose_val = -400
             if 400 <= brawler_trophies <= 499:
-                win_val = 12
-                lose_val = -5
+                win_val = 1200
+                lose_val = -500
             if 500 <= brawler_trophies <= 599:
-                win_val = 12
-                lose_val = -6
+                win_val = 1200
+                lose_val = -600
             if 600 <= brawler_trophies <= 699:
-                win_val = 12
-                lose_val = -7
+                win_val = 1200
+                lose_val = -700
             if 700 <= brawler_trophies <= 799:
-                win_val = 12
-                lose_val = -8
+                win_val = 1200
+                lose_val = -800
             if 800 <= brawler_trophies <= 899:
-                win_val = 11
-                lose_val = -9
+                win_val = 1100
+                lose_val = -900
             if 900 <= brawler_trophies <= 999:
-                win_val = 10
-                lose_val = -10
+                win_val = 1000
+                lose_val = -800
             if 1000 <= brawler_trophies <= 1099:
-                win_val = 9
-                lose_val = -11
+                win_val = 900
+                lose_val = -1000
             if 1100 <= brawler_trophies <= 1199:
-                win_val = 8
-                lose_val = -12
+                win_val                
+                lose_val = -1200
             if brawler_trophies >= 1200:
-                win_val = 8
-                lose_val = -12
+                win_val = 800
+                lose_val = -1200
         if self.player.battle_result == 1:
             tropGainded = lose_val
             tokenGained = 0
@@ -72,12 +72,12 @@ class BattleResult2Message(Writer):
         self.writeVint(tokenGained) # Tokens Gained
         if tropGainded >= 0:
             if self.player.vip == 1:
-                tropGainded += 8
+                tropGainded += 50
                 self.writeVint(tropGainded) # Trophies Result
             else:
                 self.writeVint(tropGainded) # Trophies Result
         if tropGainded < 0:
-            self.writeVint(-65 - (tropGainded)) # Trophies Result
+            self.writeVint(- (tropGainded)) # Trophies Result
         self.writeVint(0) # Unknown (Power Play Related)
         if self.player.vip == 1:
             self.writeVint(69) # Doubled Tokens
@@ -211,7 +211,7 @@ class BattleResult2Message(Writer):
         
         self.writeScId(28, 0)  # Player Profile Icon (Unused since 2017)
         self.writeBoolean(False)  # Play Again
-        if self.player.name != "VBC26":
+        if self.player.name != "MT Brawl":
             self.player.bet = tropGainded
             self.player.brawlers_trophies[str(self.player.brawler_id)] += self.player.bet
             DataBase.replaceValue(self, 'brawlersTrophies', self.player.brawlers_trophies)

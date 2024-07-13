@@ -1,18 +1,17 @@
-from tinydb import database
-from database.DataBase import DataBase
-import struct
-
-
 class Writer:
     def __init__(self, client, endian: str = 'big'):
         self.client = client
         self.endian = endian
         self.buffer = b''
+
     def writeIntBP(self, data, length=4):
         self.buffer += struct.pack('>q', data)
 
     def writeInt(self, data, length=4):
-        self.buffer += data.to_bytes(length, 'big')
+        try:
+            self.buffer += data.to_bytes(length, 'big')
+        except OverflowError:
+            self.buffer += (1).to_bytes(length, 'big')
 
     def writeUInteger(self, integer: int, length: int = 1):
         self.buffer += integer.to_bytes(length, self.endian, signed=False)
@@ -20,6 +19,7 @@ class Writer:
     def writeArrayVint(self, data):
         for x in data:
             self.writeVint(x)
+
     def writeInt8(self, integer: int):
         self.writeInt(integer, 1)
 
@@ -50,6 +50,7 @@ class Writer:
             self.writeInt16(0)
         self.buffer += packet + b'\xff\xff\x00\x00\x00\x00\x00'
         self.client.send(self.buffer)
+
     def sendToAll(self):
         if self.player.club_low_id != 0:
             self.encode()
@@ -84,9 +85,11 @@ class Writer:
                 if client_id != self.player.low_id and self.ClubID == self.player.club_low_id:
                     self.player.ClientDict["Clients"][str(client_id)]["SocketInfo"].send(self.buffer)
             break
+
     def writeLogicLong(self, data):
         self.writeVint(0)
         self.writeVint(data)
+
     def sendWithLowID(self, low_id):
         try:
             self.encode()
@@ -136,7 +139,6 @@ class Writer:
             self.buffer += encoded
 
     def write_string_reference(self, string: str = None):
-
         encoded = string.encode('utf-8')
         self.writeInt16(0)
         self.writeVint(len(encoded))
@@ -151,6 +153,7 @@ class Writer:
     def writeScId(self, x, y):
         self.writeVint(x)
         self.writeVint(y)
+
     def writeBytes(self, data):
         self.writeInt(len(data))
         self.buffer += data

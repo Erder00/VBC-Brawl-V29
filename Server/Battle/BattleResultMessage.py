@@ -18,16 +18,16 @@ class BattleResultMessage(Writer):
         tropGainded = 0
         tokenGained = 0
 		
-        rank_1_val = 12
-        rank_2_val = 11
-        rank_3_val = 10
-        rank_4_val = 9
-        rank_5_val = 8
-        rank_6_val = 7
-        rank_7_val = -2
-        rank_8_val = -4
-        rank_9_val = -8
-        rank_10_val = -10
+        rank_1_val = 1200
+        rank_2_val = 1100
+        rank_3_val = 1000
+        rank_4_val = 900
+        rank_5_val = 800
+        rank_6_val = 700
+        rank_7_val = 200
+        rank_8_val = 100
+        rank_9_val = 50
+        rank_10_val = 0
         if self.player.rank == 1:
             tropGainded = rank_1_val
             tokenGained = random.randint(10,50)
@@ -63,7 +63,7 @@ class BattleResultMessage(Writer):
         self.writeVint(tokenGained) # Tokens Gained
         if tropGainded >= 0:
             if self.player.vip == 1:
-                tropGainded += 8
+                tropGainded += 50
                 self.writeVint(tropGainded) # Trophies Result
             else:
                 self.writeVint(tropGainded) # Trophies Result
@@ -87,7 +87,7 @@ class BattleResultMessage(Writer):
         self.writeVint(0) # Coin Shower Event
         if tropGainded > 0:
             if self.player.vip == 1:
-                self.writeVint(8) # Underdog Trophies
+                self.writeVint(50) # Underdog Trophies
             else:
                 self.writeVint(0) # Underdog Trophies
         else:
@@ -226,7 +226,7 @@ class BattleResultMessage(Writer):
         conn.commit()
         conn.close()
         #end logic quest
-        if self.player.name != "VBC26":
+        if self.player.name != "mt brawl":
             self.player.bet = tropGainded
             self.player.brawlers_trophies[str(self.player.brawler_id)] += self.player.bet
             DataBase.replaceValue(self, 'brawlersTrophies', self.player.brawlers_trophies)

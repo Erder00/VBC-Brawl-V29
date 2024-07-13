@@ -2,7 +2,6 @@ from database.DataBase import DataBase
 import random
 from Utils.Writer import Writer
 
-
 class LogicBoxDataCommand(Writer):
 
     def __init__(self, client, player, boxid):
@@ -17,17 +16,16 @@ class LogicBoxDataCommand(Writer):
         self.gold = 0
         self.gems = 0
 
-
     def encode(self):
         print("server")
-        drop = random.randint(0,4)
-        self.reward = random.choice([2,3,4,3,3,2,4])
+        drop = random.randint(0, 8)  # Increase the range to make drop == 1 less likely
+        self.reward = random.choice([2, 3, 4, 3, 3, 2, 4])
         braler_id = None
         if drop == 1:
             numbers = random.choice(range(1, 39))
-            if numbers in [33,37,35]:
+            if numbers in [33, 37, 35]:
                 numbers = random.choice(range(1, 39))
-            if numbers in [33,37,35]:
+            if numbers in [33, 37, 35]:
                 braler_id = 1
             if braler_id is not None and self.player.UnlockedBrawlers.get(str(braler_id)) == 0:
                 self.brawler = braler_id
@@ -44,7 +42,6 @@ class LogicBoxDataCommand(Writer):
             self.boxid = 12
         elif self.boxid == 8: 
             self.boxid = 11
-            
         elif self.boxid == 5:  # Brawl Box
             self.player.box = self.player.box - 100
             DataBase.replaceValue(self, 'box', self.player.box)
@@ -77,7 +74,7 @@ class LogicBoxDataCommand(Writer):
 
         # Brawler start
         if self.reward == 2:
-            self.gold=random.randint(10,200)
+            self.gold = random.randint(10, 200)
             self.writeVint(self.gold) # Reward ammount
             self.writeScId(0, 7) # RewardID
             self.writeHexa('''00 00 00''')  # Reward end
@@ -88,8 +85,8 @@ class LogicBoxDataCommand(Writer):
             self.gold += self.gold
             DataBase.replaceValue(self, 'gold', self.player.gold)
         if self.reward == 3:
-            self.gold=random.randint(10,200)
-            blat1 = random.randint(10,100)
+            self.gold = random.randint(10, 200)
+            blat1 = random.randint(10, 100)
             self.writeVint(blat1)  # Reward amount
             self.writeScId(16, int(self.randomBS))  # CsvID
             self.writeVint(6)  # RewardID
@@ -97,7 +94,7 @@ class LogicBoxDataCommand(Writer):
             self.player.brawlerPoints[str(self.randomBS)] += blat1
             DataBase.replaceValue(self, 'brawlerPoints', self.player.brawlerPoints)
 			
-            blat2 = random.randint(10,100)
+            blat2 = random.randint(10, 100)
             self.writeVint(blat2)  # Reward amount
             self.writeScId(16, int(self.randomBS2))  # CsvID
             self.writeVint(6)  # RewardID
@@ -111,9 +108,9 @@ class LogicBoxDataCommand(Writer):
             self.gold += self.gold
             DataBase.replaceValue(self, 'gold', self.player.gold)
         if self.reward == 4:
-            self.gold=random.randint(10,200)
-            self.gems=random.randint(1,12)
-            blat1 = random.randint(10,100)
+            self.gold = random.randint(10, 200)
+            self.gems = random.randint(1, 12)
+            blat1 = random.randint(10, 100)
             self.writeVint(blat1)  # Reward amount
             self.writeScId(16, int(self.randomBS))  # CsvID
             self.writeVint(6)  # RewardID
@@ -121,7 +118,7 @@ class LogicBoxDataCommand(Writer):
             self.player.brawlerPoints[str(self.randomBS)] += blat1
             DataBase.replaceValue(self, 'brawlerPoints', self.player.brawlerPoints)
 			
-            blat2 = random.randint(10,100)
+            blat2 = random.randint(10, 100)
             self.writeVint(blat2)  # Reward amount
             self.writeScId(16, int(self.randomBS2))  # CsvID
             self.writeVint(6)  # RewardID

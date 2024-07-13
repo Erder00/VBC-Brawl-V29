@@ -231,7 +231,7 @@ class DataBase:
         self.conn.commit()
 
         sss = "INSERT INTO chats VALUES (?, ?, ?,?,?,?,?)"
-        var = clubid, 2, 1, self.player.low_id, str(self.player.name), 2, "Привет"
+        var = clubid, 2, 1, self.player.low_id, str(self.player.name), 2, "use /help to view all availible commands! :)"
         self.c.execute(sss, var)
         self.con.commit()
     def setNotifData(self, text, by):

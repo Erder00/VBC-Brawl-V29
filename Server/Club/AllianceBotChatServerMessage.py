@@ -14,7 +14,7 @@ class AllianceBotChatServerMessage(Writer):
         self.writeVint(self.MessageCount)
         self.writeVint(1)
         self.writeVint(1)
-        self.writeString("ПОМОЩЬ В КЛУБЕ")
+        self.writeString("mt slave")
         self.writeVint(3)
         self.writeVint(0)
         self.writeVint(0)
