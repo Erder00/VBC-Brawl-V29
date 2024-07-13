@@ -8,7 +8,8 @@ well not alot but
 - cleaning up code
 - translating stuff
 
-ANDROID APK - https://mega.nz/file/1wJzUQQS#kHIUkYZI-z0tW_O4pnFz0FS8tWMXmVPB4tJuOyf2Sz0 if this one doesn't work use the mt apk: [here](https://mega.nz/file/8h5xTYBA#U_Or0t5q8Tg99OFIMWJAMKyP3Q81rIq9S8h1mlXW9CY)
+ANDROID APK - https://mega.nz/file/1wJzUQQS#kHIUkYZI-z0tW_O4pnFz0FS8tWMXmVPB4tJuOyf2Sz0 (the client was made by primodev, all credits to him)
+if this one doesn't work use the mt apk: [here](https://mega.nz/file/8h5xTYBA#U_Or0t5q8Tg99OFIMWJAMKyP3Q81rIq9S8h1mlXW9CY)
 
 Server ZIP: [here](https://github.com/Erder00/VBC-Brawl-V29/archive/refs/heads/main.zip)
 
